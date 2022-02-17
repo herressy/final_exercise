@@ -6,9 +6,8 @@ import os.path
 import smtplib
 
 def generate_email(sender, recipient, subject, body, attachment_path = None):
-
     """Generate email, default is with no attachment"""
-    # Basic Email formatting
+
     message = email.message.EmailMessage()
     message['Subject'] = subject
     message['From'] = sender
@@ -26,10 +25,12 @@ def generate_email(sender, recipient, subject, body, attachment_path = None):
                 subtype = mime_subtype,
                 filename = attachment_name
             )
+
     return message
 
 def send_email(package):
-    """Sends the email package to the configured SMTP server."""
+    """Send the email package to the configured SMTP server."""
+
     mail_server = smtplib.SMTP('localhost')
     mail_server.send_message(package)
     mail_server.quit()

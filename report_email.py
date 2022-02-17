@@ -4,7 +4,7 @@ import os, datetime
 import reports
 import emails
 
-current_date = datetime.datetime.now().strftime('%Y-%m-%d')
+CURRENT_DATE = datetime.datetime.now().strftime('%Y-%m-%d')
 
 def generate_pdf(path):
     pdf = ""
@@ -21,7 +21,7 @@ def generate_pdf(path):
 if __name__ == "__main__":
     home = os.path.expanduser('~')
     path = home + "/supplier-data/descriptions/"
-    title = "Process Updated on " + current_date
+    title = "Process Updated on " + CURRENT_DATE
 
     # generate the package for pdf body
     package = generate_pdf(path)

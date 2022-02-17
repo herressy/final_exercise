@@ -5,6 +5,7 @@ import requests
 
 home = os.path.expanduser('~')
 url = 'http://localhost/upload/'
+
 for image in os.listdir(home + '/supplier-data/images'):
     if image.endswith(".jpeg"):
         with open(home + '/supplier-data/images/' + image, 'rb') as opened:
